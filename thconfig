@@ -1,0 +1,39 @@
+encoding  utf-8
+source pj_andel.th
+
+layout plan
+
+
+symbol-color line survey [100 80.8 10.6]			#žlutá 
+  symbol-assign line survey SKBB        
+  symbol-assign group centerline SKBB
+  symbol-set SKBB	
+  
+  language cz                           
+  scale 1 100
+  cs epsg:5514
+  legend off
+  transparency on
+  opacity 70
+  layers on
+  
+  scale-bar 1 m
+  
+  map-header 0 0 nw
+  map-header-bg on
+  
+ 
+  
+  color map-bg [95 95 95]				#bílá
+  
+  symbol-show line wall
+  symbol-hide line survey
+  
+  symbol-hide point station
+  
+  doc-author "Vojtěch Štrajt"
+
+ 
+ endlayout
+
+export map  -layout plan -o output/andel.pdf
